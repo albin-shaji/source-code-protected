@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Status | Live Production</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-pulse {
+            position: relative;
+        }
+
+        .status-pulse::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: inherit;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0; transform: scale(1.5); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
+
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 px-6 py-4">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">
+                    P
+                </div>
+                <span class="font-bold text-xl tracking-tight">Portfolio<span class="text-blue-600">.</span></span>
+            </div>
+            <a href="#" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+                Back to Projects
+            </a>
+        </nav>
+    </header>
+
+    <main class="flex-grow pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Hero Status Section -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full status-pulse"></span>
+                    <span>Live Production Environment</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
+                    Source Code <span class="gradient-text">Protected</span>
+                </h1>
+                
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    This project is currently active in a production environment with proprietary business logic and sensitive data configurations. To maintain system security and integrity, the repository is private.
+                </p>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- Protection Reason -->
+                <div class="glass-card p-8 rounded-3xl shadow-xl shadow-slate-200/50">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Security Policy</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Public access to the source code is restricted to protect API keys, database schemas, and proprietary algorithms currently serving active users. 
+                    </p>
+                </div>
+
+                <!-- Alternatives -->
+                <div class="glass-card p-8 rounded-3xl shadow-xl shadow-slate-200/50 border-blue-100">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Verification</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Recruiters and collaborators may request a live walkthrough or technical breakdown of specific modules under a confidentiality agreement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tech Stack Display -->
+            <div class="mb-16">
+                <h4 class="text-center text-sm font-semibold text-slate-400 uppercase tracking-[0.2em] mb-8">Architectural Overview</h4>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-100 text-sm font-medium text-slate-700">Next.js 14</span>
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-100 text-sm font-medium text-slate-700">TypeScript</span>
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-100 text-sm font-medium text-slate-700">PostgreSQL</span>
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-100 text-sm font-medium text-slate-700">Redis Cache</span>
+                    <span class="px-4 py-2 bg-white rounded-xl shadow-sm border border-slate-100 text-sm font-medium text-slate-700">AWS Lambda</span>
+                </div>
+            </div>
+
+            <!-- Contact/CTA Section -->
+            <div class="bg-slate-900 rounded-[2rem] p-8 md:p-12 relative overflow-hidden text-center text-white">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-4">Inquire About This Project</h2>
+                    <p class="text-slate-400 mb-8 max-w-md mx-auto">
+                        Need to discuss technical implementation details for hiring purposes?
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="mailto:admin@example.com" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-2xl font-bold transition-all shadow-lg shadow-blue-900/40">
+                            Request Technical PDF
+                        </a>
+                        <button id="show-contact" class="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-2xl font-bold transition-all">
+                            Contact Developer
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Abstract BG decoration -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-600/20 blur-[80px] rounded-full"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-indigo-600/10 blur-[80px] rounded-full"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <p>&copy; 2024 Project Repository Security Office.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Custom Modal Replacement -->
+    <div id="modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-6">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl scale-95 transition-transform duration-300 ease-out" id="modal-content">
+            <h3 class="text-2xl font-bold mb-4">Contact Developer</h3>
+            <p class="text-slate-600 mb-6">For security verification, please reach out via LinkedIn or email to discuss this live production codebase.</p>
+            <button id="close-modal" class="w-full py-4 bg-slate-900 text-white font-bold rounded-2xl">Understood</button>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+        const showBtn = document.getElementById('show-contact');
+        const closeBtn = document.getElementById('close-modal');
+
+        showBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 200);
+        });
+
+        // Close on backdrop click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeBtn.click();
+        });
+    </script>
+</body>
+</html>
